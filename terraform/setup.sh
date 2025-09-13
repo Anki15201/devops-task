@@ -39,5 +39,20 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 apt-get update -y
 apt-get install -y jenkins
 
+usermod -aG docker jenkins
+
+systemctl restart jenkins
+systemctl restart docker
+
+# Install node & npm
+apt update
+apt install -y curl
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+apt install -y nodejs
+node -v
+npm -v
+
+
+
 # Post Installation
 echo "Installation complete!"

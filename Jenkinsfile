@@ -2,10 +2,10 @@ pipeline {
   agent any
 
   environment {
-    AWS_REGION   = "ap-south-1"       // change to your region
-    ECR_REPO     = "my-node-app"       // your ECR repo name
-    IMAGE_TAG    = "latest"           // or use ${BUILD_NUMBER} for unique tags
-    CONTAINER_NAME = "my-app"         // docker container name
+    AWS_REGION   = "ap-south-1"       
+    ECR_REPO     = "my-node-app"       
+    IMAGE_TAG    = "latest"           
+    CONTAINER_NAME = "my-app"         
   }
 
   stages {
@@ -101,10 +101,10 @@ pipeline {
 
   post {
     success {
-      echo "✅ Pipeline completed successfully! App deployed on EC2."
+      echo " Pipeline completed successfully! App deployed on EC2."
     }
     failure {
-      echo "❌ Pipeline failed! Check logs."
+      echo " Pipeline failed! Check logs."
     }
   }
 }
